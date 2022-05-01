@@ -1,0 +1,30 @@
+{
+  "name": "discord_bot",
+  "version": "1.0.0",
+  "description": "discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OtShellNick/discord_bot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "OtShellNick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OtShellNick/discord_bot/issues"
+  },
+  "homepage": "https://github.com/OtShellNick/discord_bot#readme",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
