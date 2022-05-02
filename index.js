@@ -1,19 +1,20 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const {Client} = require("discord.js");
+const { Client } = require("discord.js");
 const ROOMS = require("./config/rooms");
 
-const client = new Client({intents: ["GUILDS", "GUILD_MESSAGES"]});
+const client = new Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
 
 client.login(process.env.TOKEN);
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+client.on("ready", () => {
+  // eslint-disable-next-line no-console
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('messageCreate', message => {
-    const {channelId} = message;
-    if (message.author.bot) return;
+client.on("messageCreate", (message) => {
+  const { channelId } = message;
+  if (message.author.bot) return;
 
-    ROOMS.find(room => room.id = channelId).action(client, message)
+  ROOMS.find((room) => room.id === channelId).action(client, message);
 });
