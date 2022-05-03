@@ -1,11 +1,7 @@
-require("dotenv").config();
-
 const { Client } = require("discord.js");
-const ROOMS = require("./config/rooms");
+const ROOMS = require("../config/rooms");
 
 const client = new Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
-
-client.login(process.env.TOKEN);
 
 client.on("ready", () => {
   // eslint-disable-next-line no-console
@@ -16,5 +12,12 @@ client.on("messageCreate", (message) => {
   const { channelId } = message;
   if (message.author.bot) return;
 
-  ROOMS.find((room) => room.id === channelId).action(client, message);
+  const currentRoom = ROOMS.find((room) => room.id === channelId).action(
+    client,
+    message
+  );
 });
+
+module.exports = {
+  client,
+};
