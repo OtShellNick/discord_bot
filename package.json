@@ -4,7 +4,7 @@
   "description": "discord bot",
   "main": "methods/discord.methods.js",
   "scripts": {
-    "dev": "moleculer-runner --repl --hot --config moleculer.config.js services",
+    "dev": "node ./service.js",
     "start": "moleculer-runner --instances=max services",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

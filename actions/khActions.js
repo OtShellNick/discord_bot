@@ -1,5 +1,5 @@
 const khActions = (client, message) => {
-  console.log(message);
+  console.log("Message", message.content);
   message.reply(message.content);
 };
 
