@@ -4,8 +4,8 @@
   "description": "discord bot",
   "main": "methods/discord.methods.js",
   "scripts": {
-    "dev": "node ./service.js",
-    "start": "moleculer-runner --instances=max services",
+    "dev": "knex migrate:latest && node service.js",
+    "start": "knex migrate:latest && node service.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,8 +25,10 @@
   "dependencies": {
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0",
+    "knex": "^2.0.0",
     "moleculer": "^0.14.21",
-    "moleculer-repl": "^0.7.0"
+    "moleculer-repl": "^0.7.0",
+    "pg": "^8.7.3"
   },
   "devDependencies": {
     "eslint": "^8.2.0",

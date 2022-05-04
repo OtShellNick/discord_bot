@@ -8,4 +8,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["node", "./service.js"]
+CMD ["npm", "run", "start"]
